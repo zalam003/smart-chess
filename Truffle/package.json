@@ -1,23 +1,28 @@
 {
   "name": "Truffle",
   "version": "1.0.0",
-  "description": "",
+  "description": "SMART Chess ",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "truffle compile",
+    "lint": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "truffle migrate --network migration --compile-none",
+    "devchain": "ganache -a 12 -e 1000000 -l 40000000 -m 'tackle crazy sibling hobby hurry cat donate abstract sword city enough crime'",
+    "migchain": "ganache -p 7545"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.0",
     "@truffle/hdwallet-provider": "^2.0.0",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "truffle-plugin-verify": "^0.5.20"
+    "truffle-plugin-verify": "^0.6.7"
   }
 }
