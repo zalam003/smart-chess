@@ -68,6 +68,22 @@ export const networkConfigs = {
 		rpcUrl: "https://rpc-mumbai.maticvigil.com",
 		blockExplorerUrl: "https://mumbai.polygonscan.com/",
 	},
+	"0xC285": {
+		chainId: 49797,
+		chainName: "Energi Testnet",
+		currencyName: "NRG",
+		currencySymbol: "NRG",
+		rpcUrl: "https://nodeapi.test.energi.network",
+		blockExplorerUrl: "https://explorer.test.energi.network/",
+	},
+	"0x9B75": {
+		chainId: 39797,
+		chainName: "Energi Mainnet",
+		currencyName: "NRG",
+		currencySymbol: "NRG",
+		rpcUrl: "https://nodeapi.energi.network",
+		blockExplorerUrl: "https://explorerenergi.network/",
+	},
 };
 
 export const getNativeByChain = (chain) =>
