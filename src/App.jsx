@@ -250,7 +250,7 @@ const styles = {
 
 export const Logo = () => (
 	<a
-		href="https://github.com/GHODA-crypto/shatranj"
+		href="https://github.com/SMART-Corporation/smart-chess"
 		target="_blank"
 		rel="noopener noreferrer"
 		style={{
