@@ -5,7 +5,7 @@ const Elo = artifacts.require("Elo");
 const ChessGame = artifacts.require("ChessGame");
 
 module.exports = async function (deployer) {
-	const serverAddress = "0x515B031Bcd06Df41cF1C244864A9b0cBbABa0AAE";
+	const serverAddress = "0x0E98e7fdBD94B632be4cbAb58a66deeb95b0596D";
 
 	await deployer.deploy(ChessERC20);
 	const chessERC20 = await ChessERC20.deployed();
