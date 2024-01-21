@@ -1,8 +1,6 @@
 # `Shatranj`
 
-Deployed at : https://shatranj.ga/
-
-Submission Link : [Devfolio](https://devfolio.co/submissions/shatranj-d063)
+Deployed at : https://chess-git-main-smartcorp.vercel.app
 
 ## HODL Your Horses
 
@@ -61,10 +59,10 @@ The smart contracts are air tight against replay attacks.
 
 Only whitelisted oracles can submit the transactions. This limitation can and will be removed as soon as Web3 can support a fully decentralised cloud with privacy and security.
 
-ChessGame: https://mumbai.polygonscan.com/address/0x645c7dA2A42281A4F5D656b1872C1BAbfa7FD85A#code
-ELO Rating: https://mumbai.polygonscan.com/address/0xdb3266656a85c124a158b119c047673a454Ea001#code
-ERC20 Token: https://mumbai.polygonscan.com/address/0x5537986AEC0e7AF4643308c0479fB0Aaec2A227e#code
-ERC1155 NFT: https://mumbai.polygonscan.com/address/0x8d88dC0fF21b5da42700dfF59D881056D02B17B6#code
+ChessGame: https://explorer.test.energi.network/address/0xe0B82d38659EfC4da53E9772544660470DeB6ffC#code
+ELO Rating: https://explorer.test.energi.network/address/0xe5E5308919eFc0CCc2622671f31c83F22b11dC2A#code
+ERC20 Token: https://explorer.test.energi.network/address/0xB08F0ee6Bc6c29c4D3Feb74B2402295EfD2B49C9#code
+ERC1155 NFT: https://explorer.test.energi.network/address/0x8dF24D7aeE61dC1C985597e68EC5b2700368Fd41#code
 
 ---
 
