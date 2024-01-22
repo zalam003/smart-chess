@@ -47,6 +47,11 @@ const menuItems = [
 		value: "Energi Testnet",
 		icon: <EnergiLogo />,
 	},
+	{
+		key: "0x9B75",
+		value: "Energi Mainnet",
+		icon: <EnergiLogo />,
+	},
 ];
 
 function Chains() {
@@ -54,7 +59,7 @@ function Chains() {
 	const [selected, setSelected] = useState({});
 	const { width } = useWindowSize();
 
-	// console.log("chain", chain);
+	console.log("chain", chain);
 
 	useEffect(() => {
 		if (!chainId) return null;
