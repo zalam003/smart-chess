@@ -37,9 +37,14 @@ const menuItems = [
 	// 	value: "Polygon",
 	// 	icon: <PolygonLogo />,
 	// },
+	// {
+	// 	key: "0x13881",
+	// 	value: "Mumbai",
+	// 	icon: <PolygonLogo />,
+	// },
 	{
-		key: "0x13881",
-		value: "Mumbai",
+		key: "0xC285",
+		value: "Energi Testnet",
 		icon: <PolygonLogo />,
 	},
 ];

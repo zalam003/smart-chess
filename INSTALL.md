@@ -3,4 +3,5 @@
 ## How to Run
 
 1. Run: `npm install`
-2. Run: `npx run build`
+2. Run: `npm run lint`
+3. Run: `npm run build`
