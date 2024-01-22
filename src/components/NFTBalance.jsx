@@ -464,12 +464,12 @@ const NFTCard = ({
 					<Tooltip title="Transfer NFT">
 						<SendOutlined onClick={() => handleTransferClick(nft)} />
 					</Tooltip>,
-					<Tooltip title="View On OpenSea">
+					<Tooltip title="View On GMI Marketplace">
 						<GiftOutlined
 							onClick={() =>
 								window
 									.open(
-										`https://testnets.opensea.io/assets/mumbai/${NFT_TOKEN_ADDRESS}/${token_id}/`,
+										`https://app.test.gonnamakeit.com/asset/${NFT_TOKEN_ADDRESS}/${token_id}/`,
 										"_blank"
 									)
 									.focus()

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import { PolygonLogo, ETHLogo } from "./Logos";
+import { PolygonLogo, ETHLogo, EnergiLogo } from "./Logos";
 import { useChain } from "react-moralis";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
@@ -45,7 +45,7 @@ const menuItems = [
 	{
 		key: "0xC285",
 		value: "Energi Testnet",
-		icon: <PolygonLogo />,
+		icon: <EnergiLogo />,
 	},
 ];
 
@@ -85,7 +85,7 @@ function Chains() {
 					key={selected?.key}
 					icon={selected?.icon}
 					style={{ ...styles.button, ...styles.item }}>
-					{chain?.chainId === "0x13881" ? (
+					{chain?.chainId === "" ? (
 						<>
 							<span style={{ marginLeft: width > 500 ? "5px" : 0 }}>
 								{width > 500 ? selected?.value : null}
