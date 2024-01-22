@@ -45,7 +45,7 @@ const menuItems = [
 	{
 		key: "0xC285",
 		value: "Energi Testnet",
-		icon: <PolygonLogo />,
+		icon: <EnergiLogo />,
 	},
 ];
 
