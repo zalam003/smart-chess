@@ -26,7 +26,8 @@ const TestCloudFunctions = () => {
 				display: "flex",
 				marginTop: "25",
 				width: "50vw",
-			}}>
+			}}
+		>
 			<Card
 				title={
 					<div
@@ -34,7 +35,8 @@ const TestCloudFunctions = () => {
 							display: "flex",
 							justifyContent: "space-between",
 							alignItems: "center",
-						}}>
+						}}
+					>
 						Cloud Functions Test
 					</div>
 				}
@@ -44,7 +46,8 @@ const TestCloudFunctions = () => {
 					boxShadow: "0 0.5rem 1.2rem rgb(189 197 209 / 20%)",
 					border: "1px solid #e7eaf3",
 					borderRadius: "0.5rem",
-				}}>
+				}}
+			>
 				<Form
 					onFinish={async (values) => {
 						console.log("Here", values);
@@ -52,7 +55,7 @@ const TestCloudFunctions = () => {
 
 						const results = await Moralis.Cloud.run(
 							`${values.functionName}`,
-							params
+							params,
 						);
 
 						console.log(results);
@@ -60,12 +63,14 @@ const TestCloudFunctions = () => {
 							message: "🔊 Test Cloud Functions",
 							description: `${results}`,
 						});
-					}}>
+					}}
+				>
 					<Form.Item
 						label={`Function Name`}
 						name={`functionName`}
 						required
-						style={{ marginBottom: "15px" }}>
+						style={{ marginBottom: "15px" }}
+					>
 						<Input placeholder="function name" />
 					</Form.Item>
 					<Form.Item
@@ -73,7 +78,8 @@ const TestCloudFunctions = () => {
 						name={`parameters`}
 						initialValue={`{}`}
 						required
-						style={{ marginBottom: "15px" }}>
+						style={{ marginBottom: "15px" }}
+					>
 						<TextArea placeholder="params" />
 					</Form.Item>
 					<Form.Item wrapperCol={{ offset: 8, span: 16 }}>

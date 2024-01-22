@@ -40,7 +40,7 @@ const LiveChessWrapper = ({
 	const { fetch: joinLiveChess } = useMoralisCloudFunction(
 		"joinLiveChess",
 		{ pairingParams },
-		{ autoFetch: false }
+		{ autoFetch: false },
 	);
 	useEffect(() => {
 		if (isPairing) {
@@ -58,7 +58,8 @@ const LiveChessWrapper = ({
 			/>
 			<ViewWrapper
 				isMobileDrawerVisible={isMobileDrawerVisible}
-				setIsMobileDrawerVisible={setIsMobileDrawerVisible}>
+				setIsMobileDrawerVisible={setIsMobileDrawerVisible}
+			>
 				<LiveBoard />
 			</ViewWrapper>
 		</>
@@ -78,7 +79,7 @@ const ViewWrapper = ({ gameId, children, ...rest }) => {
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 
 	const { width } = useWindowSize();

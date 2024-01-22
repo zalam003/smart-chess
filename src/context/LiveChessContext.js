@@ -42,7 +42,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 			{},
 			{
 				autoFetch: true,
-			}
+			},
 		);
 
 	useEffect(() => {
@@ -63,7 +63,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 		{
 			autoFetch: true,
 			live: true,
-		}
+		},
 	);
 	const [liveGameDataAttributes, setLiveGameDataAttributes] = useState(null);
 	const {
@@ -83,7 +83,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 				setLiveGameDataAttributes(res?.[0]);
 				return res;
 			},
-		}
+		},
 	);
 	useEffect(() => {
 		console.log("fetching game data for challenge", liveChallenge?.id);
@@ -105,7 +105,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 			liveGameData?.get("sides")
 				? liveGameData?.get("sides")?.[user?.get("ethAddress")] === "w"
 				: false,
-		[liveGameData, user]
+		[liveGameData, user],
 	);
 	useEffect(() => {
 		setOpponentAddress(liveGameData?.get("players")[isPlayerWhite ? "b" : "w"]);
@@ -127,7 +127,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 				{
 					w: { n: 0, p: 0, b: 0, r: 0, q: 0 },
 					b: { n: 0, p: 0, b: 0, r: 0, q: 0 },
-				}
+				},
 			);
 		else {
 			return {
@@ -165,7 +165,7 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 	const skins = useSkinData(
 		user?.get("ethAddress"),
 		opponentAddress,
-		isPlayerWhite
+		isPlayerWhite,
 	);
 
 	return (
@@ -187,7 +187,8 @@ const LiveChessContextProvider = ({ isPairing, children }) => {
 				gameError,
 				gameId,
 				captured,
-			}}>
+			}}
+		>
 			{children}
 		</LiveChessContext.Provider>
 	);

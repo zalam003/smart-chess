@@ -25,7 +25,7 @@ const DesktopView = ({ children }) => {
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 
 	const pgnCurrentRef = useRef(null);
@@ -68,7 +68,8 @@ const DesktopView = ({ children }) => {
 					alignItems: "center",
 					right: "-1.5rem",
 				}}
-				width={width * 0.23}>
+				width={width * 0.23}
+			>
 				<div className="prize-pool">
 					<span className="label">Prize Pool</span>
 					<div className="prize">
@@ -99,7 +100,8 @@ const DesktopView = ({ children }) => {
 								userSide !== liveGameAttributes?.turn
 									? "player-info turn"
 									: "player-info"
-							}>
+							}
+						>
 							<div className="username">
 								{liveGameAttributes?.players?.[userSide === "w" ? "b" : "w"]}
 							</div>
@@ -134,7 +136,8 @@ const DesktopView = ({ children }) => {
 							userSide === liveGameAttributes?.turn
 								? "player-info turn"
 								: "player-info"
-						}>
+						}
+					>
 						<div className="username">
 							{liveGameAttributes?.players?.[userSide === "w" ? "w" : "b"]}
 						</div>
@@ -153,7 +156,8 @@ const DesktopView = ({ children }) => {
 							playSound();
 						}}
 						className="win"
-						disabled>
+						disabled
+					>
 						<Win />
 						<span className="text">Claim Win</span>
 					</button>
@@ -168,7 +172,8 @@ const DesktopView = ({ children }) => {
 						onClick={() => {
 							resignGame();
 							playSound();
-						}}>
+						}}
+					>
 						<Abort />
 						<span className="text">Abort</span>
 					</button>

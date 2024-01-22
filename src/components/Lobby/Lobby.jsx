@@ -43,7 +43,7 @@ const Lobby = ({ setIsPairing, pairingParams, setPairingParams, elo }) => {
 	const { fetch: joinLiveChess } = useMoralisCloudFunction(
 		"joinLiveChess",
 		{ pairingParams },
-		{ autoFetch: false }
+		{ autoFetch: false },
 	);
 
 	useEffect(() => {
@@ -115,7 +115,8 @@ const Lobby = ({ setIsPairing, pairingParams, setPairingParams, elo }) => {
 				title="Initialising Game"
 				visible={isStakedBalanceLoading}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>🏇 Preparing the Stallians for war 🏇</p>
 			</Modal>
 
@@ -135,7 +136,8 @@ const Lobby = ({ setIsPairing, pairingParams, setPairingParams, elo }) => {
 					onClick={() => {
 						showGameConfirm();
 						playConfirmation();
-					}}>
+					}}
+				>
 					🚀
 					<span className="btn-text">Quick Match</span>
 				</button>
@@ -146,7 +148,8 @@ const Lobby = ({ setIsPairing, pairingParams, setPairingParams, elo }) => {
 				<button
 					disabled
 					className="play-with-friend-btn"
-					onClick={handlePlayWithFriend}>
+					onClick={handlePlayWithFriend}
+				>
 					🤝
 					<span className="btn-text">Play with friend</span>
 				</button>

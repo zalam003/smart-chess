@@ -22,13 +22,13 @@ module.exports = {
 			network_id: 1337,
 			deploymentPollingInterval: 10,
 		},
-        migration: {
-            // for testing migrations locally
-            host: '127.0.0.1',
-            port: 7545,
-            network_id: '*',
-            gas: 10000000
-        },
+		migration: {
+			// for testing migrations locally
+			host: "127.0.0.1",
+			port: 7545,
+			network_id: "*",
+			gas: 10000000,
+		},
 		// mumbai: {
 		// 	provider: () =>
 		// 		new HDWalletProvider(
@@ -43,43 +43,43 @@ module.exports = {
 		// 	timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
 		// 	skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
 		// },
-        testnet: {
-            provider: () =>
-                new HDWalletProvider({
-                    mnemonic: {
-                        phrase: mnemonic // as defined in a local .secret_energi_testnet file before deployment.
-                    },
-                    providerOrUrl: 'https://nodeapi.test.energi.network', // if this fails, try: 'http://172.31.77.180:49796'
-                    derivationPath: "m/44'/49797'/0'/0/"
-                }),
-            network_id: '49797',
-            gas: 1000000, // gas limit used for deploy. 1000000 is the block gas limit.
-            websockets: true, // used for the confirmations listener or to hear events using .on or .once.
-            verify: {
-                apiUrl: 'https://explorer.test.energi.network/api',
-                apiKey: 'xxxxx-no-api-key-needed-xxxxx',
-                explorerUrl: 'https://explorer.test.energi.network/address',
-            },
-        },
-        mainnet: {
-            provider: () =>
-                new HDWalletProvider({
-                    mnemonic: {
-                        phrase: mnemonic // change to desired mnemonic in a local .secret_energi file before deployment.
-                    },
-                    providerOrUrl: 'https://nodeapi.energi.network',
-                    derivationPath: "m/44'/39797'/0'/0/"
-                }),
-            network_id: '39797',
-            from: '0x0E98e7fdBD94B632be4cbAb58a66deeb95b0596D',
-            gas: 1000000, // gas limit used for deploy. 1000000 is the block gas limit.
-            websockets: true, //Used for the confirmations listener or to hear events using .on or .once.
-            verify: {
-                apiUrl: 'https://explorer.energi.network/api',
-                apiKey: 'xxxxx-no-api-key-needed-xxxxx',
-                explorerUrl: 'https://explorer.energi.network/address',
-            },
-        },
+		testnet: {
+			provider: () =>
+				new HDWalletProvider({
+					mnemonic: {
+						phrase: mnemonic, // as defined in a local .secret_energi_testnet file before deployment.
+					},
+					providerOrUrl: "https://nodeapi.test.energi.network", // if this fails, try: 'http://172.31.77.180:49796'
+					derivationPath: "m/44'/49797'/0'/0/",
+				}),
+			network_id: "49797",
+			gas: 1000000, // gas limit used for deploy. 1000000 is the block gas limit.
+			websockets: true, // used for the confirmations listener or to hear events using .on or .once.
+			verify: {
+				apiUrl: "https://explorer.test.energi.network/api",
+				apiKey: "xxxxx-no-api-key-needed-xxxxx",
+				explorerUrl: "https://explorer.test.energi.network/address",
+			},
+		},
+		mainnet: {
+			provider: () =>
+				new HDWalletProvider({
+					mnemonic: {
+						phrase: mnemonic, // change to desired mnemonic in a local .secret_energi file before deployment.
+					},
+					providerOrUrl: "https://nodeapi.energi.network",
+					derivationPath: "m/44'/39797'/0'/0/",
+				}),
+			network_id: "39797",
+			from: "0x0E98e7fdBD94B632be4cbAb58a66deeb95b0596D",
+			gas: 1000000, // gas limit used for deploy. 1000000 is the block gas limit.
+			websockets: true, //Used for the confirmations listener or to hear events using .on or .once.
+			verify: {
+				apiUrl: "https://explorer.energi.network/api",
+				apiKey: "xxxxx-no-api-key-needed-xxxxx",
+				explorerUrl: "https://explorer.energi.network/address",
+			},
+		},
 	},
 	//
 	// Truffle DB is currently disabled by default; to enable it, change enabled:

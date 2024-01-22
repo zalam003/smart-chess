@@ -1139,7 +1139,7 @@ var Chess = function (fen) {
 			// most most basic interpretation - b1c3 parses to Nc3.
 
 			var matches = clean_move.match(
-				/([pnbrqkPNBRQK])?([a-h][1-8])x?-?([a-h][1-8])([qrbnQRBN])?/
+				/([pnbrqkPNBRQK])?([a-h][1-8])x?-?([a-h][1-8])([qrbnQRBN])?/,
 			);
 			if (matches) {
 				var piece = matches[1];
@@ -1156,7 +1156,7 @@ var Chess = function (fen) {
 				// when there is one legal knight move to e7). In this case, the value
 				// of 'from' variable will be a rank or file, not a square.
 				var matches = clean_move.match(
-					/([pnbrqkPNBRQK])?([a-h]?[1-8]?)x?-?([a-h][1-8])([qrbnQRBN])?/
+					/([pnbrqkPNBRQK])?([a-h]?[1-8]?)x?-?([a-h][1-8])([qrbnQRBN])?/,
 				);
 
 				if (matches) {
@@ -1364,7 +1364,7 @@ var Chess = function (fen) {
 					moves.push(make_pretty(ugly_moves[i]));
 				} else {
 					moves.push(
-						move_to_san(ugly_moves[i], generate_moves({ legal: true }))
+						move_to_san(ugly_moves[i], generate_moves({ legal: true })),
 					);
 				}
 			}
@@ -1646,7 +1646,7 @@ var Chess = function (fen) {
 					")|.)*\\])" +
 					"(?:" +
 					mask(newline_char) +
-					"){2}"
+					"){2}",
 			);
 
 			// If no header given, begin with moves.
@@ -1721,7 +1721,7 @@ var Chess = function (fen) {
 						return bracket !== undefined
 							? encode_comment(bracket)
 							: " " + encode_comment(`{${semicolon.slice(1)}}`);
-					}
+					},
 				)
 				.replace(new RegExp(mask(newline_char), "g"), " ");
 

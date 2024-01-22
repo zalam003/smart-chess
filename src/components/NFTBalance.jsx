@@ -56,7 +56,7 @@ function NFTBalance() {
 		{
 			autoFetch: true,
 			live: true,
-		}
+		},
 	);
 	const {
 		data: userNFTs,
@@ -72,7 +72,7 @@ function NFTBalance() {
 		{
 			autoFetch: true,
 			live: true,
-		}
+		},
 	);
 
 	async function transfer(nft, receiver) {
@@ -102,7 +102,8 @@ function NFTBalance() {
 			<Tabs
 				defaultActiveKey="1"
 				type="card"
-				style={{ marginTop: 40, width: "100%", maxWidth: 1000 }}>
+				style={{ marginTop: 40, width: "100%", maxWidth: 1000 }}
+			>
 				<TabPane key="1" tab="Your NFTs">
 					<div style={styles.NFTs}>
 						<Skeleton loading={isLoadingUserNFTs}>
@@ -125,7 +126,8 @@ function NFTBalance() {
 											flexDirection: "column",
 											justfyContent: "center",
 											alignItems: "center",
-										}}>
+										}}
+									>
 										<Knight style={{ width: 100, height: 100, opacity: 0.5 }} />
 										<h1 style={{ fontSize: "2rem", marginTop: "-17.5rem" }}>
 											No NFTs found
@@ -138,7 +140,8 @@ function NFTBalance() {
 												fontSize: "1.2rem",
 												cursor: "pointer",
 												zIndex: 100,
-											}}>
+											}}
+										>
 											Earn one here
 										</Link>
 									</div>
@@ -155,7 +158,8 @@ function NFTBalance() {
 								flexDirection: "column",
 								justfyContent: "center",
 								alignItems: "center",
-							}}>
+							}}
+						>
 							<Knight style={{ width: 100, opacity: 0.5 }} />
 							<h1 style={{ fontSize: "2rem", marginTop: "-17.5rem" }}>
 								No Skins in use
@@ -193,7 +197,8 @@ function NFTBalance() {
 												style={{ height: "300px" }}
 											/>
 										}
-										key={index}></Card>
+										key={index}
+									></Card>
 								))}
 						</div>
 					)}
@@ -206,7 +211,8 @@ function NFTBalance() {
 				onCancel={() => setVisibility(false)}
 				onOk={() => transfer(nftToSend, receiverToSend)}
 				confirmLoading={isPending}
-				okText="Send">
+				okText="Send"
+			>
 				<AddressInput autoFocus placeholder="Receiver" onChange={setReceiver} />
 			</Modal>
 		</>
@@ -236,7 +242,7 @@ const NFTMetaModal = ({
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 
 	const {
@@ -250,7 +256,7 @@ const NFTMetaModal = ({
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 
 	function success() {
@@ -336,10 +342,12 @@ const NFTMetaModal = ({
 				width={450}
 				confirmLoading={settingPieceSkin}
 				centered={true}
-				title={metadata.name}>
+				title={metadata.name}
+			>
 				<div
 					className="images"
-					style={{ display: "flex", justifyContent: "space-between" }}>
+					style={{ display: "flex", justifyContent: "space-between" }}
+				>
 					<div
 						style={{
 							display: "flex",
@@ -347,13 +355,15 @@ const NFTMetaModal = ({
 							alignItems: "center",
 							justifyContent: "flex-end",
 							marginRight: "0.5rem",
-						}}>
+						}}
+					>
 						<div
 							style={{
 								fontSize: "0.75rem",
 								textAlign: "center",
 								marginBottom: "1rem",
-							}}>
+							}}
+						>
 							NFT was minted on
 							<div style={{ fontWeight: 800, fontSize: "1rem" }}>
 								{mintedAt.toDateString()}
@@ -381,11 +391,13 @@ const NFTMetaModal = ({
 						width: "100%",
 						textAlign: "center",
 						fontSize: "1.1rem",
-					}}>
+					}}
+				>
 					You Defeated{" "}
 					<span
 						className="white"
-						style={{ fontSize: "1.2rem", fontWeight: 700 }}>
+						style={{ fontSize: "1.2rem", fontWeight: 700 }}
+					>
 						{metadata.attributes[2].value.split(" ") ===
 						metadata.attributes[0].value
 							? metadata.attributes[0].value
@@ -395,7 +407,8 @@ const NFTMetaModal = ({
 					in{" "}
 					<span
 						className="moves"
-						style={{ fontSize: "1.2rem", fontWeight: 700 }}>
+						style={{ fontSize: "1.2rem", fontWeight: 700 }}
+					>
 						{metadata.attributes[3].value}
 					</span>{" "}
 					moves.
@@ -455,7 +468,7 @@ const NFTCard = ({
 							onClick={() => {
 								window.open(
 									`${getExplorer(chainId)}address/${NFT_TOKEN_ADDRESS}`,
-									"_blank"
+									"_blank",
 								);
 								// console.log(nft.metadata.image);
 							}}
@@ -470,7 +483,7 @@ const NFTCard = ({
 								window
 									.open(
 										`https://app.test.gonnamakeit.com/asset/${NFT_TOKEN_ADDRESS}/${token_id}/`,
-										"_blank"
+										"_blank",
 									)
 									.focus()
 							}
@@ -501,7 +514,8 @@ const NFTCard = ({
 						alt=""
 						style={{ height: "300px" }}
 					/>
-				}>
+				}
+			>
 				<Meta title={nft?.name} description={NFT_TOKEN_ADDRESS} />
 			</Card>
 		</>
