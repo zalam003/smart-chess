@@ -89,7 +89,8 @@ function Chains() {
 				<Button
 					key={selected?.key}
 					icon={selected?.icon}
-					style={{ ...styles.button, ...styles.item }}>
+					style={{ ...styles.button, ...styles.item }}
+				>
 					{chain?.chainId === "" ? (
 						<>
 							<span style={{ marginLeft: width > 500 ? "5px" : 0 }}>

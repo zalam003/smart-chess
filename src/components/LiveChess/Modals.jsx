@@ -20,7 +20,7 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 		{},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 	const {
 		data: claimData,
@@ -30,7 +30,7 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 	} = useMoralisCloudFunction(
 		"claimVictory",
 		{ gameId: gameId, needNFT: false },
-		{ autoFetch: false }
+		{ autoFetch: false },
 	);
 	const {
 		data: claimDataWithNFT,
@@ -40,7 +40,7 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 	} = useMoralisCloudFunction(
 		"claimVictory",
 		{ gameId: gameId, needNFT: true },
-		{ autoFetch: false }
+		{ autoFetch: false },
 	);
 
 	const handleQuickMatch = () => {
@@ -69,18 +69,21 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 						onClick={() => {
 							cancelChallenge();
 							urlHistory.push("/lobby");
-						}}>
+						}}
+					>
 						Cancel Challenge
 					</Button>
 				}
-				closable={false}>
+				closable={false}
+			>
 				<h2>🔍 Finding you a match...</h2>
 			</Modal>
 			<Modal
 				title="Waiting"
 				visible={liveChallengeData?.get("challengeStatus") === 1}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<h2>Match Found. Waiting for Opponent 🎠 ...</h2>
 			</Modal>
 			<Modal
@@ -91,7 +94,8 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 					setIsConfirmVisible(false);
 					urlHistory.push("/lobby");
 				}}
-				closable={false}>
+				closable={false}
+			>
 				<h2>
 					Congrats! Your Prize Pool is being processed. Tansfer will happeen
 					soon! 💸
@@ -106,7 +110,8 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 					setIsConfirmVisible(false);
 					urlHistory.push("/lobby");
 				}}
-				closable={false}>
+				closable={false}
+			>
 				<h2>
 					Congrats! Your Prize Pool is being processed 💸 and your NFT is on its
 					way. Tansfer will happeen soon! 🖼️
@@ -128,14 +133,16 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 						</button>
 					)),
 				]}
-				closable={false}>
+				closable={false}
+			>
 				<h2>Search for a Match Failed 🟥 ! Please try again.</h2>
 			</Modal>
 			<Modal
 				title="Canceling"
 				visible={cancelingChallenge}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<h2>Canceling this Challenge 🔴 ...</h2>
 			</Modal>
 			{liveGameAttributes && (
@@ -152,7 +159,8 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 								onClick={() => {
 									claimVictory();
 									setIsConfirmVisible(true);
-								}}>
+								}}
+							>
 								Claim Pool
 							</Button>,
 							<Button
@@ -161,11 +169,13 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 								onClick={() => {
 									claimVictoryWithNFT();
 									setIsConfirmVisible(true);
-								}}>
+								}}
+							>
 								Claim Pool + Mint NFT
 							</Button>,
 						]}
-						width={450}>
+						width={450}
+					>
 						<h1>🎊 You Won the Game 🎊</h1>
 						<h3>{liveGameAttributes?.outcome === 3 ? "1 - 0" : "0 - 1"}</h3>
 					</Modal>
@@ -182,11 +192,13 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 							<Button
 								key="quickMatch"
 								type="primary"
-								onClick={handleQuickMatch}>
+								onClick={handleQuickMatch}
+							>
 								Quick Match
 							</Button>,
 						]}
-						width={450}>
+						width={450}
+					>
 						<h1>🫂 You Lost the Game 🫂</h1>
 						<h3>{liveGameAttributes?.outcome === 3 ? "1 - 0" : "0 - 1"}</h3>
 					</Modal>
@@ -200,11 +212,13 @@ const Modals = ({ joinLiveChess, setIsPairing, setPairingParams }) => {
 							<Button
 								key="quickMatch"
 								type="primary"
-								onClick={handleQuickMatch}>
+								onClick={handleQuickMatch}
+							>
 								Quick Match
 							</Button>,
 						]}
-						width={450}>
+						width={450}
+					>
 						<h1>Game Drawn 😅</h1>
 						<h3>1/2 - 1/2</h3>
 					</Modal>

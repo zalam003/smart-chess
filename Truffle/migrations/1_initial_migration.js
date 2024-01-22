@@ -12,7 +12,7 @@ module.exports = async function (deployer) {
 	await deployer.deploy(
 		ChessNFT,
 		"https://gateway.ipfs.io/ipfs/",
-		"/metadata.json"
+		"/metadata.json",
 	);
 	const chessNFT = await ChessNFT.deployed();
 	// await deployer.deploy(ChessLogic);
@@ -25,7 +25,7 @@ module.exports = async function (deployer) {
 		chessNFT.address,
 		// chessLogic.address,
 		elo.address,
-		serverAddress
+		serverAddress,
 	);
 	const chessGame = await ChessGame.deployed();
 

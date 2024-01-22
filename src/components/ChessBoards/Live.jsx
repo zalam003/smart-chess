@@ -36,7 +36,7 @@ const LiveBoard = () => {
 						[gameHistory[gameHistory.length - 1]?.to]: {
 							backgroundColor: "rgba(0, 89, 255, 0.5)",
 						},
-				  }
+					}
 				: {};
 		});
 	}, [gameHistory]);
@@ -162,7 +162,7 @@ const LiveBoard = () => {
 				chessboardRef.current.clearPremoves();
 			}
 		},
-		[Moralis, gameId]
+		[Moralis, gameId],
 	);
 
 	function onSquareRightClick(square) {
@@ -204,7 +204,7 @@ const LiveBoard = () => {
 			});
 			return newPieces;
 		},
-		[skins]
+		[skins],
 	);
 
 	return (

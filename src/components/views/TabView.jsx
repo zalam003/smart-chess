@@ -29,7 +29,7 @@ const TabView = ({ children }) => {
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 	const pgnCurrentRef = useRef(null);
 
@@ -65,7 +65,8 @@ const TabView = ({ children }) => {
 					defaultActiveKey="2"
 					tabBarGutter={75}
 					centered={true}
-					className="tabs-container">
+					className="tabs-container"
+				>
 					<TabPane
 						tab={
 							<span>
@@ -74,7 +75,8 @@ const TabView = ({ children }) => {
 							</span>
 						}
 						key="1"
-						className="chat-room">
+						className="chat-room"
+					>
 						<div className="prize-pool">
 							<span className="label">Prize Pool</span>
 							<div className="prize">
@@ -99,7 +101,8 @@ const TabView = ({ children }) => {
 								onClick={() => {
 									// claimVictory();
 									playSound();
-								}}>
+								}}
+							>
 								<Win />
 								<span className="text">Claim Win</span>
 							</button>
@@ -114,7 +117,8 @@ const TabView = ({ children }) => {
 								onClick={() => {
 									resignGame();
 									playSound();
-								}}>
+								}}
+							>
 								<Abort />
 								<span className="text">Abort</span>
 							</button>
@@ -128,7 +132,8 @@ const TabView = ({ children }) => {
 							</span>
 						}
 						key="2"
-						className="game-info">
+						className="game-info"
+					>
 						{liveGameAttributes ? (
 							<div className="players op">
 								<div
@@ -136,7 +141,8 @@ const TabView = ({ children }) => {
 										userSide !== liveGameAttributes?.turn
 											? "player-info turn"
 											: "player-info"
-									}>
+									}
+								>
 									<div className="username">
 										{
 											liveGameAttributes?.players?.[
@@ -174,7 +180,8 @@ const TabView = ({ children }) => {
 									userSide === liveGameAttributes?.turn
 										? "player-info turn"
 										: "player-info"
-								}>
+								}
+							>
 								<div className="username">
 									{liveGameAttributes?.players?.[userSide === "w" ? "w" : "b"]}
 								</div>

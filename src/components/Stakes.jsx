@@ -110,7 +110,7 @@ const Stakes = () => {
 
 	const allowedAmountToSpend = useMemo(
 		() => Moralis.Units.FromWei(allowanceData || 0),
-		[allowanceData]
+		[allowanceData],
 	);
 
 	useEffect(() => {
@@ -135,7 +135,8 @@ const Stakes = () => {
 						title="$GHODA in your wallet"
 						placement={winSize.width > 1024 ? "left" : "bottom"}
 						overlayClass="tooltip"
-						arrowPointAtCenter={true}>
+						arrowPointAtCenter={true}
+					>
 						<span className="label" style={{ cursor: "help" }}>
 							GHODA
 						</span>
@@ -149,7 +150,8 @@ const Stakes = () => {
 						title="Staked $GHODA. Required to play the game"
 						placement={winSize.width > 1024 ? "right" : "bottom"}
 						overlayClass="tooltip"
-						arrowPointAtCenter={true}>
+						arrowPointAtCenter={true}
+					>
 						<span className="label" style={{ cursor: "help" }}>
 							sGHODA
 						</span>
@@ -175,7 +177,8 @@ const Stakes = () => {
 							className="max"
 							onClick={() =>
 								setStakeAmount(Moralis.Units.FromWei(tokenBalance))
-							}>
+							}
+						>
 							max
 						</button>
 					</div>
@@ -189,7 +192,8 @@ const Stakes = () => {
 									await fetchStakedBalance();
 									await fetchTokenBalance();
 									setStakeAmount(0);
-								}}>
+								}}
+							>
 								Stake
 							</button>
 						) : (
@@ -197,7 +201,8 @@ const Stakes = () => {
 								className="approve-btn"
 								onClick={async () => {
 									await getApprovalFromUser();
-								}}>
+								}}
+							>
 								Approve
 							</button>
 						)}
@@ -219,7 +224,8 @@ const Stakes = () => {
 							className="max"
 							onClick={() => {
 								setUnstakeAmountInput(Moralis.Units.FromWei(stakedBalance));
-							}}>
+							}}
+						>
 							max
 						</button>
 					</div>
@@ -239,7 +245,8 @@ const Stakes = () => {
 								await fetchStakedBalance();
 								await fetchTokenBalance();
 								setUnstakeAmountInput(0);
-							}}>
+							}}
+						>
 							Unstake
 						</button>
 					</div>
@@ -262,35 +269,40 @@ const Modals = ({
 				title="Loading"
 				visible={isStakingTokens}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>Staking in progress...</p>
 			</Modal>
 			<Modal
 				title="Loading"
 				visible={isApproving}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>Approval in progress...</p>
 			</Modal>
 			<Modal
 				title="Loading"
 				visible={isStakedBalanceLoading}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>Staked GHODA Check in progress...</p>
 			</Modal>
 			<Modal
 				title="Loading"
 				visible={isTokenBalanceLoading}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>GHODA Balance Check in progress...</p>
 			</Modal>
 			<Modal
 				title="Loading"
 				visible={isUnstakingTokens}
 				footer={null}
-				closable={false}>
+				closable={false}
+			>
 				<p>Unstaking in progress...</p>
 			</Modal>
 		</>

@@ -37,7 +37,7 @@ const MobileView = ({
 		},
 		{
 			autoFetch: false,
-		}
+		},
 	);
 
 	const pgnCurrentRef = useRef(null);
@@ -95,7 +95,8 @@ const MobileView = ({
 					setIsMobileDrawerVisible(!isMobileDrawerVisible);
 					console.log(isMobileDrawerVisible);
 				}}
-				style={styles.Button}>
+				style={styles.Button}
+			>
 				<FireFilled style={{ margin: "auto", fontSize: "1.5rem" }} />
 			</button>
 			<Content className="chessboard">
@@ -106,7 +107,8 @@ const MobileView = ({
 								userSide !== liveGameAttributes?.turn
 									? "player-info turn"
 									: "player-info"
-							}>
+							}
+						>
 							<div className="username">
 								{liveGameAttributes?.players?.[userSide === "w" ? "b" : "w"]}
 							</div>
@@ -133,7 +135,8 @@ const MobileView = ({
 							userSide === liveGameAttributes?.turn
 								? "player-info turn"
 								: "player-info"
-						}>
+						}
+					>
 						<div className="username">
 							{liveGameAttributes?.players?.[userSide === "w" ? "w" : "b"]}
 						</div>
@@ -151,12 +154,14 @@ const MobileView = ({
 				onClose={() => setIsMobileDrawerVisible(false)}
 				drawerStyle={styles.Drawer}
 				width={Math.max(width * 0.3, 420)}
-				zIndex={1000}>
+				zIndex={1000}
+			>
 				<Tabs
 					defaultActiveKey="2"
 					tabBarGutter={75}
 					centered={true}
-					className="tabs-container">
+					className="tabs-container"
+				>
 					<TabPane
 						tab={
 							<span>
@@ -165,7 +170,8 @@ const MobileView = ({
 							</span>
 						}
 						key="1"
-						className="chat-room">
+						className="chat-room"
+					>
 						<div className="prize-pool">
 							<span className="label">Prize Pool</span>
 							<div className="prize">
@@ -191,7 +197,8 @@ const MobileView = ({
 								onClick={() => {
 									// claimVictory();
 									playSound();
-								}}>
+								}}
+							>
 								<Win />
 								<span className="text">Claim Win</span>
 							</button>
@@ -206,7 +213,8 @@ const MobileView = ({
 								onClick={() => {
 									resignGame();
 									playSound();
-								}}>
+								}}
+							>
 								<Abort />
 								<span className="text">Abort</span>
 							</button>
@@ -220,7 +228,8 @@ const MobileView = ({
 							</span>
 						}
 						key="2"
-						className="game-info">
+						className="game-info"
+					>
 						<div className="pgn">
 							{pgnArray?.map((row, rowIdx) => (
 								<Row key={rowIdx} className="row">

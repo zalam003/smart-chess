@@ -11,7 +11,7 @@ const useSkinData = (userAddress, opponentAddress, isPlayerWhite) => {
 		{
 			autoFetch: true,
 			live: true,
-		}
+		},
 	);
 	const {
 		data: [opponentSkinData],
@@ -22,7 +22,7 @@ const useSkinData = (userAddress, opponentAddress, isPlayerWhite) => {
 		{
 			autoFetch: true,
 			live: true,
-		}
+		},
 	);
 	const [skins, setSkins] = useState({});
 	useEffect(() => {
@@ -34,8 +34,8 @@ const useSkinData = (userAddress, opponentAddress, isPlayerWhite) => {
 			: [];
 		const opponentSkinPieces = opponentSkinData?.attributes
 			? Object.keys(opponentSkinData?.attributes).filter(
-					(key) => key.length === 2
-			  )
+					(key) => key.length === 2,
+				)
 			: [];
 
 		setSkins(() => {

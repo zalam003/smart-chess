@@ -36,7 +36,8 @@ function Account({ elo }) {
 					authenticate({
 						signingMessage: "Connect Your Account to GHODA.crypto",
 					})
-				}>
+				}
+			>
 				<p style={styles.text}>Authenticate</p>
 			</div>
 		);
@@ -60,14 +61,16 @@ function Account({ elo }) {
 					fontWeight: "500",
 				}}
 				style={{ fontSize: "16px", fontWeight: "500" }}
-				width="400px">
+				width="400px"
+			>
 				Account
 				<Card
 					style={{
 						marginTop: "10px",
 						borderRadius: "1rem",
 					}}
-					bodyStyle={{ padding: "15px" }}>
+					bodyStyle={{ padding: "15px" }}
+				>
 					<Address
 						avatar="left"
 						size={6}
@@ -79,7 +82,8 @@ function Account({ elo }) {
 						<a
 							href={`${getExplorer(chainId)}/address/${user.get("ethAddress")}`}
 							target="_blank"
-							rel="noreferrer">
+							rel="noreferrer"
+						>
 							<SelectOutlined style={{ marginRight: "5px" }} />
 							View on Explorer
 						</a>
@@ -98,7 +102,8 @@ function Account({ elo }) {
 					onClick={() => {
 						logout();
 						setIsModalVisible(false);
-					}}>
+					}}
+				>
 					Disconnect Wallet
 				</Button>
 			</Modal>

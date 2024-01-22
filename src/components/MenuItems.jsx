@@ -19,7 +19,8 @@ function MenuItems() {
 				justifyContent: "center",
 				userSelect: "none",
 			}}
-			defaultSelectedKeys={[pathname]}>
+			defaultSelectedKeys={[pathname]}
+		>
 			<Menu.Item key="/lobby">
 				<NavLink to="/lobby">♟️ Lobby</NavLink>
 			</Menu.Item>

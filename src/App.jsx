@@ -125,7 +125,8 @@ const ActiveChallengeNotification = ({ setIsPairing }) => {
 				size="small"
 				onClick={() => {
 					setIsPairing(true);
-				}}>
+				}}
+			>
 				Live Chess
 			</Button>
 		);
@@ -146,7 +147,7 @@ const ActiveChallengeNotification = ({ setIsPairing }) => {
 		{},
 		{
 			autoFetch: true,
-		}
+		},
 	);
 	useEffect(() => {
 		if (challenge !== null && !location.pathname.includes("live-chess")) {
@@ -258,7 +259,8 @@ export const Logo = () => (
 			justifyContent: "center",
 			alignItems: "center",
 			cursor: "pointer",
-		}}>
+		}}
+	>
 		{/* <img src={LogoImg} style={{ width: 45, height: 45 }} alt="" /> */}
 		<LogoImg height={40} width={150} style={{ margin: "auto 0" }} />
 	</a>

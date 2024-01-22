@@ -5,14 +5,14 @@ Moralis.Cloud.define(
 	"joinExistingChallenge",
 	async (request) => {
 		const existingChallenge = await checkExistingChallenges(
-			request.user.get("ethAddress")
+			request.user.get("ethAddress"),
 		);
 
 		return existingChallenge;
 	},
 	{
 		requireUser: true,
-	}
+	},
 );
 
 // Cancel JOIN Challenge
@@ -30,7 +30,7 @@ Moralis.Cloud.define(
 	},
 	{
 		requireUser: true,
-	}
+	},
 );
 
 // Join Pairing Pool
@@ -43,7 +43,7 @@ Moralis.Cloud.define(
 		const params = request.params;
 
 		const existingChallenge = await checkExistingChallenges(
-			request.user.get("ethAddress")
+			request.user.get("ethAddress"),
 		);
 
 		if (existingChallenge) {
@@ -83,7 +83,7 @@ Moralis.Cloud.define(
 									"$player1ELO",
 									params.gamePreferences?.upperElo
 										? user.get("ELO") + params.gamePreferences?.upperElo
-										: (user.get("ELO") + 50),
+										: user.get("ELO") + 50,
 								],
 							},
 							{
@@ -91,7 +91,7 @@ Moralis.Cloud.define(
 									"$player1ELO",
 									params.gamePreferences?.lowerElo
 										? user.get("ELO") - params.gamePreferences?.lowerElo
-										: (user.get("ELO") - 50),
+										: user.get("ELO") - 50,
 								],
 							},
 						],
@@ -127,7 +127,7 @@ Moralis.Cloud.define(
 	},
 	{
 		requireUser: true,
-	}
+	},
 );
 
 // Send Move
@@ -155,7 +155,7 @@ Moralis.Cloud.define(
 
 		return true;
 	},
-	validateMove
+	validateMove,
 );
 
 // RESIGN GAME
@@ -198,7 +198,7 @@ Moralis.Cloud.define(
 				error: "You are not part of this game",
 			},
 		},
-	}
+	},
 );
 
 // CLAIM VICTORY
@@ -265,7 +265,7 @@ Moralis.Cloud.define(
 		}
 		return { txStatus: "unsuccessful", httpResponse };
 	},
-	validateClaimVictory
+	validateClaimVictory,
 );
 
 // Use piece Skin
@@ -279,7 +279,7 @@ Moralis.Cloud.define(
 		const polygonNFTOwnersQuery = new Moralis.Query("PolygonNFTOwners");
 		polygonNFTOwnersQuery.equalTo(
 			"token_address",
-			"0x8d88dc0ff21b5da42700dff59d881056d02b17b6"
+			"0x8d88dc0ff21b5da42700dff59d881056d02b17b6",
 		);
 		polygonNFTOwnersQuery.equalTo("token_uri", token_uri);
 		polygonNFTOwnersQuery.equalTo("owner_of", request.user.get("ethAddress"));
@@ -317,7 +317,7 @@ Moralis.Cloud.define(
 				[data.piece.split("/").length - 1].split(".")[0];
 			gameSkin.set(
 				pieceName,
-				`https://gateway.ipfs.io/ipfs/${pieceIpfs}/${pieceName}.png`
+				`https://gateway.ipfs.io/ipfs/${pieceIpfs}/${pieceName}.png`,
 			);
 
 			await gameSkin.save(null, { useMasterKey: true });
@@ -332,7 +332,7 @@ Moralis.Cloud.define(
 				required: true,
 			},
 		},
-	}
+	},
 );
 // Remove Piece Skin
 Moralis.Cloud.define(
@@ -354,7 +354,7 @@ Moralis.Cloud.define(
 				type: "string",
 			},
 		},
-	}
+	},
 );
 
 // After Effects && Triggers
@@ -370,7 +370,7 @@ Moralis.Cloud.afterSave("Challenge", async (request) => {
 		const newGame = await createNewGame(
 			challenge,
 			challenge.get("player1"),
-			challenge.get("player2")
+			challenge.get("player2"),
 		);
 		await newGame.save(null, { useMasterKey: true });
 
@@ -416,7 +416,7 @@ Moralis.Cloud.afterSave("Challenge", async (request) => {
 					challenge.set("challengeStatus", 9);
 					await newGame.save(null, { useMasterKey: true });
 					await challenge.save(null, { useMasterKey: true });
-				}
+				},
 			)
 			.catch((error) => {
 				throw Error(error);
@@ -456,8 +456,8 @@ Moralis.Cloud.afterSave("Game", async (request) => {
 				outcome === 3
 					? game.get("players")["w"]
 					: outcome === 4
-					? game.get("players")["b"]
-					: null
+						? game.get("players")["b"]
+						: null,
 			);
 
 			game.save(null, { useMasterKey: true });
@@ -514,7 +514,7 @@ Moralis.Cloud.afterSave("Game", async (request) => {
 		const scoreChange = getScoreChange(
 			white.get("ELO"),
 			black.get("ELO"),
-			game.get("outcome")
+			game.get("outcome"),
 		);
 
 		white.set("ELO", white.get("ELO") + scoreChange);

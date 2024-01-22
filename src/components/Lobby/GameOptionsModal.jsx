@@ -73,7 +73,8 @@ const GameOptionsModal = ({
 			}}
 			visible={isModalVisible}
 			onOk={handleOk}
-			onCancel={handleCancel}>
+			onCancel={handleCancel}
+		>
 			<Radio.Group
 				value={gameOptions.color}
 				style={{
@@ -89,7 +90,8 @@ const GameOptionsModal = ({
 				className="wb-group"
 				defaultValue="w"
 				size="large"
-				buttonStyle="solid">
+				buttonStyle="solid"
+			>
 				<Radio.Button
 					label="Choose Sides"
 					style={{
@@ -102,7 +104,8 @@ const GameOptionsModal = ({
 						marginRight: "1rem",
 					}}
 					className="wb"
-					value="w">
+					value="w"
+				>
 					<WKing style={{ marginTop: "0.5rem", width: 30, height: 30 }} />
 				</Radio.Button>
 				<Radio.Button
@@ -116,7 +119,8 @@ const GameOptionsModal = ({
 						height: "4rem",
 					}}
 					className="wb"
-					value="b">
+					value="b"
+				>
 					<BKing style={{ marginTop: "0.5rem", width: 30, height: 30 }} />
 				</Radio.Button>
 			</Radio.Group>
@@ -130,7 +134,8 @@ const GameOptionsModal = ({
 					alignItems: "center",
 					width: "80%",
 					height: "40%",
-				}}>
+				}}
+			>
 				<span
 					className="title"
 					style={{
@@ -139,7 +144,8 @@ const GameOptionsModal = ({
 						fontWeight: "600",
 						textAlign: "center",
 						marginBottom: "1rem",
-					}}>
+					}}
+				>
 					ELO Rating Range
 				</span>
 				<div
@@ -150,7 +156,8 @@ const GameOptionsModal = ({
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
-					}}>
+					}}
+				>
 					<InputNumber
 						size="large"
 						min={1}
@@ -167,7 +174,8 @@ const GameOptionsModal = ({
 							fontWeight: 600,
 							marginLeft: "0.25rem",
 							marginRight: "1rem",
-						}}>
+						}}
+					>
 						+
 					</span>
 					<span
@@ -178,7 +186,8 @@ const GameOptionsModal = ({
 							color: "white",
 							backgroundColor: "rgba(0,0,0,0.85)",
 							borderRadius: "0.5rem",
-						}}>
+						}}
+					>
 						{elo}
 					</span>
 					<span
@@ -188,7 +197,8 @@ const GameOptionsModal = ({
 							fontWeight: 600,
 							marginRight: "0.25rem",
 							marginLeft: "1rem",
-						}}>
+						}}
+					>
 						-
 					</span>
 					<InputNumber

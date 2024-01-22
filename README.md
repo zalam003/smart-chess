@@ -1,6 +1,6 @@
 # `Shatranj`
 
-Deployed at : https://chess-git-main-smartcorp.vercel.app
+Deployed at : https://chess.smartNFTs.art/
 
 ## HODL Your Horses
 
@@ -101,3 +101,9 @@ Chess dApp sounds an easy task to pull off. Here are some of the ideas we came u
 - We now use Moralis to trigger a centralised Oracle (Temporary solution) that calls the smart contract functions.
 - Stakes are locked, game is played off-chain and on the Cloud. Then submitted to the Oracle which generates NFTs and mints them if the user wants it. Oracle submits the game to the distributed ledger and now the user owns their game. On-chain and off-chain.
 - The NFTs are minted on the oracle and not the client because clients can mint spoofs and there is no way to verify the NFTs without saving gas. Hence we mint them using set protocols and ensure that only correct NFTs are minted.
+
+## Original Repo:
+
+The code was forked from:
+
+- [GHODA-crypto/shatranj](https://github.com/GHODA-crypto/shatranj)
