@@ -231,7 +231,7 @@ Moralis.Cloud.define(
 
 		const httpResponse = await Moralis.Cloud.httpRequest({
 			method: "POST",
-			url: `https://server.shatranj.ga/end`,
+			url: `https://chess.smartnfts.art/end`,
 			headers: {
 				"Content-Type": "application/json;charset=utf-8",
 			},
@@ -279,7 +279,7 @@ Moralis.Cloud.define(
 		const polygonNFTOwnersQuery = new Moralis.Query("PolygonNFTOwners");
 		polygonNFTOwnersQuery.equalTo(
 			"token_address",
-			"0x8d88dc0ff21b5da42700dff59d881056d02b17b6",
+			"0x8dF24D7aeE61dC1C985597e68EC5b2700368Fd41",
 		);
 		polygonNFTOwnersQuery.equalTo("token_uri", token_uri);
 		polygonNFTOwnersQuery.equalTo("owner_of", request.user.get("ethAddress"));
@@ -391,7 +391,7 @@ Moralis.Cloud.afterSave("Challenge", async (request) => {
 		// send http request for start game tx
 		const httpResponse = await Moralis.Cloud.httpRequest({
 			method: "POST",
-			url: `https://server.shatranj.ga/start`,
+			url: `https://chess.smartnfts.art/start`,
 			headers: {
 				"Content-Type": "application/json;charset=utf-8",
 			},
@@ -479,7 +479,7 @@ Moralis.Cloud.afterSave("Game", async (request) => {
 				// send http request for end game tx
 				const httpResponse = await Moralis.Cloud.httpRequest({
 					method: "POST",
-					url: "https://server.shatranj.ga/end",
+					url: "https://chess.smartnfts.art/end",
 					headers: {
 						"Content-Type": "application/json;charset=utf-8",
 					},
