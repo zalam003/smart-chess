@@ -75,6 +75,7 @@ export const networkConfigs = {
 		currencySymbol: "NRG",
 		rpcUrl: "https://nodeapi.test.energi.network",
 		blockExplorerUrl: "https://explorer.test.energi.network/",
+		wrapped: "0x184F7b12f29d675f34ff816528ADBfd0E0501Ad4",
 	},
 	"0x9B75": {
 		chainId: 39797,
@@ -83,6 +84,7 @@ export const networkConfigs = {
 		currencySymbol: "NRG",
 		rpcUrl: "https://nodeapi.energi.network",
 		blockExplorerUrl: "https://explorerenergi.network/",
+		wrapped: "0xA55F26319462355474A9F2c8790860776a329aA4",
 	},
 };
 
