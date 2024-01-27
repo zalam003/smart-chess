@@ -91,7 +91,7 @@ function Chains() {
 					icon={selected?.icon}
 					style={{ ...styles.button, ...styles.item }}
 				>
-					{chain?.chainId === "" ? (
+					{chain?.chainId === "0xC285" ? (
 						<>
 							<span style={{ marginLeft: width > 500 ? "5px" : 0 }}>
 								{width > 500 ? selected?.value : null}
