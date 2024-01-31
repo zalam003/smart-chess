@@ -59,7 +59,7 @@ function Chains() {
 	const [selected, setSelected] = useState({});
 	const { width } = useWindowSize();
 
-	console.log("chain", chain);
+	// console.log("chain", chain);
 
 	useEffect(() => {
 		if (!chainId) return null;
