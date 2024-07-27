@@ -55,18 +55,18 @@ const menuItems = [
 ];
 
 function Chains() {
-	const { switchNetwork, eth_chainId, chain } = useChain();
+	const { switchNetwork, chainId, chain } = useChain();
 	const [selected, setSelected] = useState({});
 	const { width } = useWindowSize();
 
 	// console.log("chain", chain);
 
 	useEffect(() => {
-		if (!eth_chainId) return null;
-		const newSelected = menuItems.find((item) => item.key === eth_chainId);
+		if (!chainId) return null;
+		const newSelected = menuItems.find((item) => item.key === chainId);
 		setSelected(newSelected);
-		console.log("current chainId: ", eth_chainId);
-	}, [eth_chainId]);
+		console.log("current chainId: ", chainId);
+	}, [chainId]);
 
 	const handleMenuClick = (e) => {
 		console.log("switch to: ", e.key);
