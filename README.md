@@ -107,3 +107,5 @@ Chess dApp sounds an easy task to pull off. Here are some of the ideas we came u
 The code was forked from:
 
 - [GHODA-crypto/shatranj](https://github.com/GHODA-crypto/shatranj)
+
+- Submission Link : [Devfolio](https://devfolio.co/submissions/shatranj-d063)
